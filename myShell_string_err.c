@@ -38,7 +38,7 @@ int _putfd(char c, int fd)
 		write(fd, buf, j);
 		j = 0;
 	}
-	if (c != Buf_FLUSH)
+	if (c != BUF_FLUSH)
 		buf[j++] = c;
 
 	return (1);
@@ -82,5 +82,5 @@ int _putsfd(char *str, int fd)
 		j += _putfd(*str++, fd);
 	}
 
-	return (i);
+	return (j);
 }

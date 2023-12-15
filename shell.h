@@ -26,6 +26,8 @@
 #define HIST_FILE  ".simple_shell_history"
 #define HIST_MAX  4096
 
+extern char **environ;
+
 /**
  * struct liststr - singly linked list.
  * @num: The number filed.
@@ -107,7 +109,7 @@ char *_strdup(const char *);
 char *begin_with(const char *, const char *);
 char *_strcat(char *, char *);
 char **strtow(char *, char *);
-void _puts(char);
+void _puts(char *);
 char *_strchr(char *, char);
 int _putchar(char);
 char *_strncat(char *, char *, int);
@@ -159,7 +161,7 @@ int is_delim(char, char *);
 int interactive(infa_t *);
 int print_d(int, int);
 void remove_comments(char *);
-char *convert_number(long_int, int, int);
+char *convert_number(long int, int, int);
 void set_info(infa_t *, char **);
 void print_error(infa_t *, char *);
 void free_info(infa_t *, int);
@@ -174,7 +176,7 @@ int read_history(infa_t *infa);
 int write_history(infa_t *infa);
 int replace_alias(infa_t *);
 int build_history_list(infa_t *infa, char *buf, int linecount);
-int check_chain(infa_t *, char *, size_t *, size_t, size_t);
+void check_chain(infa_t *, char *, size_t *, size_t, size_t);
 int replace_string(char **, char *);
 int is_chain(infa_t *, char *, size_t *);
 

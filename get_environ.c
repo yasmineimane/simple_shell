@@ -10,7 +10,7 @@ char **get_environ(infa_t *infa)
 {
 	if (!infa->environ || infa->env_changed)
 	{
-		infa->environ = list_to strings(infa->env);
+		infa->environ = list_to_strings(infa->env);
 		infa->env_changed = 0;
 	}
 

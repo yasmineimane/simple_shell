@@ -6,7 +6,7 @@
  * Return: array of strings.
  */
 
-size_t list_len(lista_t *h)
+size_t list_len(const lista_t *h)
 {
 	size_t i = 0;
 

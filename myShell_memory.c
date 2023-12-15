@@ -46,6 +46,6 @@ char *_memset(char *w, char a, unsigned int n)
 	unsigned int y;
 
 	for (y = 0 ; y < n ; y++)
-		s[y] = a;
+		w[y] = a;
 	return (w);
 }

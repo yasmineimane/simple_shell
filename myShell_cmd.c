@@ -60,7 +60,7 @@ int find_builtin(infa_t *infa)
 	for (i = 0 ; builtintb[i].type ; i++)
 		if (_strcmp(infa->argv[0], builtintb[i].type) == 0)
 		{
-			infa->linecount++;
+			infa->line_count++;
 			builtin_ret = builtintb[i].func(infa);
 			break;
 		}

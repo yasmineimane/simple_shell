@@ -55,7 +55,7 @@ void print_error(infa_t *infa, char *estr)
 void free_info(infa_t *infa, int all)
 {
 	ffree(infa->argv);
-	nfa->argv = NULL;
+	infa->argv = NULL;
 	infa->path = NULL;
 	if (all)
 	{

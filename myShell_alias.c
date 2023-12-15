@@ -55,7 +55,7 @@ int replace_vars(infa_t *infa)
 			continue;
 		}
 		node = node_begin_with(infa->env, &infa->argv[i][1], ')');
-		if (nod)
+		if (node)
 		{
 			replace_string(&(infa->argv[i]),
 					_strdup(_strchr(node->str, '=') + 1));

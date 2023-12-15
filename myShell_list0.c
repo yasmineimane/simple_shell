@@ -6,7 +6,7 @@
  * Return: number of nodes.
  */
 
-size_t print_list(cost lista_t *h)
+size_t print_list(const lista_t *h)
 {
 	size_t nodes = 0;
 
@@ -71,7 +71,7 @@ ssize_t get_node_index(lista_t *head, lista_t *node)
 	while (head)
 	{
 		if (head == node)
-			return (i);
+			return (index);
 		head = head->next;
 		index++;
 	}
@@ -133,7 +133,7 @@ lista_t *node_begin_with(lista_t *node, char *prefix, char c)
 
 	while (node)
 	{
-		ptr = starts_with(node->str, prefix);
+		ptr = begin_with(node->str, prefix);
 		if (ptr && ((c == -1) || (*ptr == c)))
 			return (node);
 		node = node->next;

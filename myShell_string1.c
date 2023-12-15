@@ -42,7 +42,7 @@ char **strtow(char *str, char *d)
 	s = malloc((1 + words) * sizeof(char *));
 	if (!s)
 		return (NULL);
-	for (i = 0 ; j = 0 ; j < words ; j++)
+	for (i = 0, j = 0 ; j < words ; j++)
 	{
 		while (is_delim(str[i + k], d) && str[i + k])
 			k++;
@@ -80,7 +80,7 @@ int _putchar(char c)
 		j = 0;
 	}
 	if (c != BUF_FLUSH)
-		buf[i++] = c;
+		buf[j++] = c;
 	return (1);
 }
 

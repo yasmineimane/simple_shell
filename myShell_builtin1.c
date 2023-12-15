@@ -10,7 +10,7 @@ int _myhelp(infa_t *infa)
 {
 	char **arg_array;
 
-	arg_array = info->argv;
+	arg_array = infa->argv;
 	_puts("help call works. Function not yet implemented \n");
 	if (0)
 		_puts(*arg_array);
@@ -52,7 +52,7 @@ int set_alias(infa_t *infa, char *str)
 	ptr = _strchr(str, '=');
 	if (!ptr)
 		return (1);
-	if (!*++p)
+	if (!*++ptr)
 		return (unset_alias(infa, str));
 
 	unset_alias(infa, str);
@@ -64,7 +64,7 @@ int set_alias(infa_t *infa, char *str)
  * @node: the alias node.
  * Return: On success 0, else 1.
  */
-int print_alias(lisat_t *node)
+int print_alias(lista_t *node)
 {
 	char *ptr = NULL, *w = NULL;
 
@@ -107,7 +107,7 @@ int _myalias(infa_t *infa)
 	{
 		ptr = _strchr(infa->argv[i], '=');
 		if (ptr)
-			set_alias(infa->argv[i]);
+			set_alias(infa, infa->argv[i]);
 		else
 			print_alias(node_begin_with(infa->alias, infa->argv[i], '='));
 	}

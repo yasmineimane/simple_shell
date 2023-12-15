@@ -21,23 +21,23 @@ int hsh(infa_t *infa, char **av)
 		if (w != -1)
 		{
 			set_info(infa, av);
-			builtin_ret = find_builtin(info);
+			builtin_ret = find_builtin(infa);
 			if (builtin_ret == -1)
-				find_cmd(info);
+				find_cmd(infa);
 		}
-		else if (interactive(info))
+		else if (interactive(infa))
 			_putchar('\n');
 		free_info(infa, 0);
 	}
 	write_history(infa);
 	free_info(infa, 1);
 	if (!interactive(infa) && infa->status)
-		ecit(infa->status);
+		exit(infa->status);
 	if (builtin_ret == -2)
 	{
 		if (infa->err_num == -1)
 			exit(infa->status);
-		exit(infa->arr_num);
+		exit(infa->err_num);
 	}
 	return (builtin_ret);
 }
